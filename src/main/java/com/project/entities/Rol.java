@@ -36,7 +36,7 @@ public class Rol implements Serializable{
 	public void setId( int idRol ) { 
 		this.id = idRol; 
 	} 
-	
+	 
 	@Column( name = "DESCRIPCION", nullable = false ) 
 	public String getDescripcion( ) { 
 		return descripcion; 
