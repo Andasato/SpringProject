@@ -20,8 +20,15 @@ public class ClienteServices implements IUsuarioServices{
 	
 	@Transactional(readOnly = false)
 	public Usuario create(Usuario usuario){
-		System.out.println(usuario.getDependencia());
 		return clienteDao.save(usuario);
+	}
+	@Transactional(readOnly = false)
+	public Usuario update(Usuario usuario){
+		return clienteDao.save(usuario);
+	}
+	@Transactional(readOnly = false)
+	public void delete(Integer id){
+		clienteDao.deleteById(id);
 	}
 }
 

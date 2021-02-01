@@ -10,29 +10,30 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody; 
 import org.springframework.web.bind.annotation.RequestMapping; 
 import org.springframework.web.bind.annotation.RestController; 
-import com.project.entities.Usuario; 
-import com.project.services.IUsuarioServices; 
+import com.project.entities.Dependencia;
+import com.project.services.IDependenciaServices; 
 
 @RestController 
-@RequestMapping("/api") 
-public class UsuarioRestController { 
-	@Autowired 
-	private IUsuarioServices usuarioService; 
+@RequestMapping("/api/dependencia") 
+public class DependenciaRestController { 
 	
-	@GetMapping("/usuario") 
-	public List<Usuario> index(){ 
-		return usuarioService.findAll(); 
+	@Autowired 
+	private IDependenciaServices dependenciaService; 
+	
+	@GetMapping("") 
+	public List<Dependencia> index(){ 
+		return dependenciaService.findAll(); 
 	} 
-	@PostMapping("/usuario") 
-	public Usuario create(@RequestBody Usuario usuario){ 
-		return usuarioService.create(usuario); 
+	@PostMapping("") 
+	public Dependencia create(@RequestBody Dependencia dependencia){ 
+		return dependenciaService.create(dependencia); 
 	} 
-	@PutMapping("/usuario") 
-	public Usuario update(@RequestBody Usuario usuario){ 
-		return usuarioService.update(usuario); 
+	@PutMapping("") 
+	public Dependencia update(@RequestBody Dependencia dependencia){ 
+		return dependenciaService.update(dependencia); 
 	} 
-	@DeleteMapping("/usuario/{id}") 
+	@DeleteMapping("/dependencia/{id}") 
 	public void delete(@PathVariable("id") Integer id){ 
-		usuarioService.delete(id); 
+		dependenciaService.delete(id); 
 	} 
 } 

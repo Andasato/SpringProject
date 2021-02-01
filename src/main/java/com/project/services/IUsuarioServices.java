@@ -8,5 +8,7 @@ public interface IUsuarioServices {
 	
 	public List<Usuario> findAll();
 	public Usuario create(Usuario usuario);
+	public Usuario update(Usuario usuario);
+	public void delete(Integer id );
 		
 }
